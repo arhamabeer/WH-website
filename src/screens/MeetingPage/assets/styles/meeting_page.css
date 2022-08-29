@@ -1,0 +1,823 @@
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+
+html {
+  scroll-behavior: smooth;
+}
+.hero-right-planspage {
+  margin-top: 32px !important;
+  max-width: 506px;
+  animation-duration: 80s;
+  animation-delay: 0s;
+  animation-name: slide_hero_to_left;
+  animation-timing-function: ease-in-out;
+}
+
+@media only screen and (min-width: 320px) {
+  .filter-btn-active .tooltip-text,
+  .filter-btn-inactive .tooltip-text {
+    left: 34.5% !important;
+  }
+  .right .hero-right-planspage {
+    margin-top: 32px !important;
+    max-width: 400px;
+    animation-duration: 80s;
+    animation-delay: 0s;
+    animation-name: slide_hero_to_left;
+    animation-timing-function: ease-in-out;
+  }
+
+  .hero-right-planspage h1 {
+    font-size: 50px !important;
+  }
+}
+
+/* Location and Plans */
+.locations-and-plans-title-area {
+  display: flex;
+  justify-content: center;
+}
+.locations-and-plans-title-area p {
+  padding: 0 !important;
+}
+.locations-and-plans-title-area h1 {
+  font-size: 108px;
+  font-weight: bold;
+}
+.planSlider-outer-div {
+  /* border: 1px solid royalblue; */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.color-primary {
+  color: #c1242b;
+}
+.wrap-mini {
+  position: relative;
+}
+.div-signature {
+  position: absolute;
+  top: 79%;
+  margin-left: 50%;
+  padding-left: 20px;
+  justify-items: normal;
+  /* widows: 10px; */
+  width: 10%;
+  height: 20px;
+  left: 12%;
+  /* z-index: -1; */
+}
+.locations-and-plans-filter-button-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  /* border: 2px solid green; */
+  flex-wrap: wrap;
+}
+.locations-and-plans-filter-button-area button {
+  flex: 0.15;
+  width: 100%;
+  display: flex;
+}
+.filter-btn-active {
+  background-color: #555855;
+  border: none;
+  color: white;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 8px;
+  height: 50px;
+  width: 150px;
+}
+.filter-btn-active:focus {
+  outline: none;
+  box-shadow: none;
+}
+.filter-btn-active:hover {
+  background: #c1242b;
+}
+
+.filter-btn-inactive {
+  background-color: gray; /* Green */
+  border: none;
+  color: white;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 8px;
+  /* z-index: -1; */
+  height: 50px;
+  width: 150px;
+  opacity: 0.7;
+}
+.filter-btn-active .tooltip-text,
+.filter-btn-inactive .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0px;
+  position: absolute;
+  z-index: 1;
+  left: 60%;
+  margin-left: -5px;
+  margin-top: 45px;
+}
+.too {
+  display: none;
+}
+.filter-btn-active .tooltip-text::after,
+.filter-btn-inactive .tooltip-text::after {
+  content: "";
+  position: absolute;
+  margin-left: -5px;
+  left: 50%;
+  bottom: 100%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent transparent black transparent;
+}
+.filter-btn-inactive:hover .tooltip-text,
+.filter-btn-active:hover .tooltip-text {
+  visibility: visible;
+}
+.filter-btn-inactive:hover {
+  background: #c1242b;
+}
+.hover-text {
+  display: none;
+}
+.filter-btn-inactive:focus {
+  outline: none;
+  box-shadow: none;
+}
+.locations-and-plans-filter-button-area-module {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.welcome-section {
+  width: 100%;
+  margin: 170px auto 50px auto;
+  /* border: 1px solid seagreen; */
+}
+/* .wrapper{
+  width: 100%;
+  border: 1px solid black;
+} */
+
+/* FAQS SECTION */
+.faq-section {
+  margin-top: 90px;
+  width: 100%;
+  /* height: fit-content; */
+  padding-top: 30px;
+  /* border: 5px solid green; */
+}
+.faq-wrapper {
+  min-height: 600px;
+  max-width: fit-content !important;
+  margin: -40px auto 30px auto;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.faq-wrapper h1 {
+  text-align: center;
+  font-size: 108px;
+  font-weight: bold;
+}
+.faq-wrapper p {
+  padding: 0 !important;
+  text-align: justify;
+}
+.bullets-wrapper {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /* background-color: red; */
+}
+
+.faq-text:hover {
+  text-decoration: underline;
+  text-decoration-color: #c1242b;
+}
+
+.bullets-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bullets-left p {
+  display: flex;
+  align-items: center;
+}
+.bullets-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bullets-right p {
+  display: flex;
+  align-items: center;
+}
+
+/* Our amenities */
+.our-amenities-section {
+  width: 100%;
+  /* height: 700px; */
+  margin: 120px auto;
+  /* background-color: red; */
+}
+
+.our-amenities-content-area {
+  /* background-color: green; */
+  height: 90%;
+  margin: 0px auto;
+  /* border: 1px solid rebeccapurple; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.amenities-title {
+  text-align: center;
+}
+
+.amenities-title h1 {
+  font-size: 108px !important;
+  font-weight: bold;
+}
+.faq-main-div {
+  width: 40%;
+  /* border: 1px solid darkorange; */
+}
+.bullets-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* MEETING ROOM BOOKING */
+.booking1-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.location-img-div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 700px;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.location-div {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-evenly !important;
+  height: 270px !important;
+  flex-wrap: wrap !important;
+}
+.location-inner-div {
+  background: gray;
+  color: #fff;
+  width: 200px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  box-shadow: 0px 0px 7px gray;
+  margin: 10px 0;
+}
+.location-inner-div-tab {
+  background: gray;
+  color: #fff;
+  width: 175px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px gray;
+}
+.location-inner-div-tab:hover {
+  background: #31090b;
+  cursor: pointer;
+}
+.location-inner-div:hover {
+  background: #31090b;
+  cursor: pointer;
+}
+
+.basicInfo-div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 50px;
+}
+.basicInfo-div > div {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 13px;
+}
+.basic-info-btn:hover {
+  background-color: #c1242b;
+}
+.basic-info-btn {
+  width: 40%;
+  height: 45px;
+  border-radius: 11px;
+  background-color: #000;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  /* letter-spacing: 5px; */
+  border-width: 0px;
+}
+.booking-sec-main-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.book-label {
+  display: flex;
+  width: 99%;
+  margin-bottom: 0px;
+  margin-top: 2px;
+}
+.basic-info-inputs {
+  width: 92%;
+  margin: 0px;
+  height: 40px;
+  border-radius: 16px;
+  padding: 5px 20px;
+}
+.basic-info-sel {
+  width: 92%;
+  height: 40px;
+  border: 0px;
+  background-color: #dbdbdb;
+  border-radius: 16px;
+  padding: 5px 20px;
+}
+.location-img-tab {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.mr-img {
+  width: 40%;
+  display: flex;
+  align-self: auto;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px 0px;
+}
+.mr-img_img {
+  cursor: pointer;
+  transition: 2s;
+}
+.mr-img1:hover .mr-img_h3 {
+  width: 525px;
+  height: 325px;
+}
+.mr-img1:hover .mr-img_img {
+  width: 525px;
+  height: 325px;
+}
+.mr-img_h3 {
+  display: flex;
+  position: absolute;
+  margin: 0;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.425);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  transition: 2s;
+  cursor: pointer;
+}
+
+.booking-section2 {
+  margin-bottom: 100px;
+}
+.time-picker,
+.e-control-wrapper {
+  font-size: 15px !important;
+  margin-bottom: 15px !important;
+  width: 92%;
+}
+
+.meet-room-main {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 75px;
+}
+.meet-room-sec {
+  display: flex;
+  justify-content: space-between;
+}
+.meet-room-sec-legend {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-self: center;
+  border-radius: 50%;
+}
+.mrs0 {
+  background: #c1242b;
+}
+.mrs1 {
+  background: #109c49;
+}
+.meet-room-in {
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 0 15px;
+  border-radius: 5px;
+  width: 80%;
+}
+.ul-bookings {
+  width: 100%;
+  height: 400px;
+  margin-top: 25px;
+}
+.ul-bookings h3 {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+.li-bookings {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  height: 70px;
+  padding: 10px;
+  justify-content: space-around;
+  margin: 10px 0px;
+}
+
+ul {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.sec2-room {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  width: 40%;
+}
+.sec2-room-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+}
+.sec2-room-bookings {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+.sec3-meeting {
+  display: flex;
+  justify-content: center;
+}
+.card-main-div {
+  width: 60%;
+}
+.basic-info-inputs-card {
+  width: 50%;
+}
+.exp-cvv-div {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+}
+.card-number {
+  border-width: 0;
+  background-color: #dbdbdb;
+}
+.basic-info-inputs-exp {
+  width: 35%;
+  border-width: 0;
+  background-color: #dbdbdb;
+}
+.payment-form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 220px;
+}
+.credit-card-display {
+  width: 45%;
+  justify-content: center;
+  align-items: center;
+}
+.meet-r {
+  width: auto;
+  display: flex;
+  align-self: auto;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px 0px;
+}
+.meet-r-i a,
+.meet-r-i h3 {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.meet-r-i h6 {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+.div-book-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 600px) {
+  .faq-main-div {
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+  .bullets-wrapper {
+    /* border: 1px solid green; */
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* PLANS PAGE MEDIA QUIRIES */
+
+@media only screen and (max-width: 426px) {
+  /* LOCATION AND PLANS */
+  .locations-and-plans-title-area h1 {
+    font-size: 70px !important;
+  }
+  .faq-main-div {
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+  .bullets-wrapper {
+    /* border: 1px solid green; */
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  /* FAQ */
+  .faq-wrapper p {
+    padding: 10px !important;
+    text-align: center;
+    line-height: 1.5em;
+  }
+  .bullets-wrapper {
+    flex-direction: row;
+    /* height: 500px; */
+  }
+  .bullets-left {
+    height: 100%;
+    justify-content: space-evenly;
+  }
+  .bullets-right {
+    height: 100%;
+    justify-content: space-evenly;
+  }
+
+  /* AMINITIES */
+  .amenities-title h1 {
+    font-size: 70px !important ;
+  }
+  .faq-main-div {
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+  .bullets-wrapper {
+    /* border: 1px solid green; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 375px) {
+  /* LOCATION AND PLANS */
+  .locations-and-plans-title-area h1 {
+    font-size: 60px !important;
+  }
+  .faq-main-div {
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+  .bullets-wrapper {
+    /* border: 1px solid green; */
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  /* AMENITIES */
+  .amenities-title h1 {
+    font-size: 60px !important ;
+  }
+}
+@media only screen and (max-width: 320px) {
+  /* LOCATION AND PLANS */
+  .locations-and-plans-title-area h1 {
+    font-size: 50px !important;
+  }
+
+  /* AMENITIES */
+  .amenities-title h1 {
+    font-size: 50px !important ;
+  }
+  .faq-main-div {
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+  .bullets-wrapper {
+    /* border: 1px solid green; */
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 768px) and (max-width: 1420px) {
+  .mr-img {
+    width: 40%;
+    margin-bottom: 25px;
+    justify-content: space-between;
+  }
+  .mr-img img {
+    width: 300px;
+    height: 250px;
+  }
+  .location-img-div {
+    align-content: center;
+    height: auto;
+  }
+  .basicInfo-div > div {
+    width: 75%;
+  }
+  .location-img-tab {
+    margin-left: 1.5%;
+    justify-content: space-between;
+  }
+  .location-img-tab div {
+    width: 150px;
+  }
+  .sec2-room {
+    width: 90%;
+  }
+  .meet-r {
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .booking1-section {
+    flex-direction: column;
+  }
+  .location-img-div {
+    width: 100%;
+    height: auto;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+  }
+  .mr-img {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+  .mr-img img {
+    width: 100%;
+    height: 250px;
+  }
+  .location-div {
+    display: none !important;
+  }
+  .basicInfo-div {
+    width: 100%;
+    position: relative;
+    left: 40px;
+    align-items: flex-start;
+  }
+  .basic-info-btn {
+    width: 90%;
+  }
+  .basicInfo-div > div,
+  .basic-info-inputs-card {
+    width: 80%;
+  }
+  .meet-r {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .meet-r img {
+    width: 47%;
+    height: 180px;
+  }
+  .sec2-room,
+  .sec3-meeting {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  .meet-room-main {
+    width: 70%;
+  }
+  .sec2-room-bookings,
+  .card-main-div,
+  .credit-card-display {
+    width: 100%;
+  }
+  .ul-bookings {
+    width: 90%;
+    height: 300px;
+  }
+  .sec2-room-info {
+    width: 90%;
+    align-self: center;
+  }
+  .div-book-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .book-btn {
+    width: 78%;
+  }
+  .payment-form {
+    justify-content: space-evenly;
+  }
+  .exp-cvv-div {
+    width: 80%;
+    justify-content: space-between;
+  }
+}
