@@ -405,15 +405,15 @@ html {
 }
 .mr-img_img {
   cursor: pointer;
-  transition: 2s;
+  transition: 1s;
 }
 .mr-img1:hover .mr-img_h3 {
-  width: 525px;
-  height: 325px;
+  width: 520px;
+  height: 320px;
 }
 .mr-img1:hover .mr-img_img {
-  width: 525px;
-  height: 325px;
+  width: 520px;
+  height: 320px;
 }
 .mr-img_h3 {
   display: flex;
@@ -426,7 +426,7 @@ html {
   align-items: center;
   width: 500px;
   height: 300px;
-  transition: 2s;
+  transition: 1s;
   cursor: pointer;
 }
 
@@ -583,6 +583,20 @@ ul {
 .div-book-btn {
   display: flex;
   justify-content: flex-end;
+}
+
+.selected_loc_h {
+  width: 550px;
+  height: 340px;
+}
+.selected_loc {
+  border: 3px solid #f5891d;
+  width: 550px;
+  height: 340px;
+}
+
+.mr-img_h3:active {
+  border: 5px solid #bf640a;
 }
 @media only screen and (max-width: 600px) {
   .faq-main-div {

@@ -58,34 +58,34 @@ export default class MeetingPage extends Component {
       sideDrawerOpen: false,
       errorMessage: {
         name: "",
-        nameValid: true,
+        nameValid: false,
         city: "",
-        cityValid: true,
+        cityValid: false,
         email: "",
-        emailValid: true,
+        emailValid: false,
         phone: "",
-        phoneValid: true,
+        phoneValid: false,
       },
       location: [
         {
           name: "Metropole",
           area: "Shahrah-e-Faisal",
-          img: require("./assets/images/lobby.png"),
+          img: require("./assets/images/Metropole.png"),
         },
         {
           name: "Tipu Sultan",
           area: "Tipu sultan road",
-          img: require("./assets/images/lobby.png"),
+          img: require("./assets/images/Tipu.png"),
         },
         {
-          name: "Zamzama",
+          name: "Ittehad",
           area: "DHA",
-          img: require("./assets/images/lobby.png"),
+          img: require("./assets/images/Ittehad.jpg"),
         },
         {
           name: "Gulshan",
           area: "Rashid minhas road",
-          img: require("./assets/images/lobby.png"),
+          img: require("./assets/images/Gulshan.png"),
         },
         // {
         //   name: "Ittehad",
@@ -161,6 +161,10 @@ export default class MeetingPage extends Component {
     GetAllLocation("all").then((docs) => {
       // this.setState({ locations: docs, selectLocations: docs[0].locName });
     });
+  };
+
+  handleLocationSelect = (data) => {
+    this.setState({ selectedLocation: data.name });
   };
 
   componentDidMount() {
@@ -359,6 +363,7 @@ export default class MeetingPage extends Component {
       fullname,
       company,
       phone_number,
+      errorMessage,
     } = this.state;
     const slot = {
       room,
@@ -370,8 +375,19 @@ export default class MeetingPage extends Component {
       company,
       phone_number,
     };
-    if (date === "" || Stime === "" || Etime === "") {
-      alert("Fill all");
+    let regExp = /^[0-9 :]+$/;
+    if (
+      date === "" ||
+      Stime === "" ||
+      Etime === "" ||
+      !errorMessage.nameValid ||
+      !errorMessage.cityValid ||
+      !errorMessage.phoneValid
+    ) {
+      // console.log();
+      alert("All fields are required");
+    } else if (!regExp.test(Stime) || !regExp.test(Etime)) {
+      alert("Wrong time format");
     } else {
       // let sth = this.state.Stime.split(":");
       // let sth1 = sth.length > 1 ? sth[1].split(" ") : "";
@@ -384,9 +400,9 @@ export default class MeetingPage extends Component {
       // } else if (endMili - startMili <= 0) {
       // }
       // this.setState({ blur3: false });
+      BookMeeting(slot, this);
     }
     // console.log(Stime, Etime);
-    BookMeeting(slot, this);
   };
   parseTime = (s) => {
     var part = s.match(/(\d+):(\d+)(?: )?(am|pm)?/i);
@@ -431,6 +447,7 @@ export default class MeetingPage extends Component {
     fetchedMeetings.length &&
       fetchedMeetings.sort((a, b) => a.Stime.localeCompare(b.Stime));
 
+    // console.log("State=> ", this.state.selectedLocation);
     // console.log("State=> ", meetCheck.length, meetCheck, fetchedMeetings);
 
     return (
@@ -623,7 +640,11 @@ export default class MeetingPage extends Component {
             </div>
           ))}
         </div> */}
-        <Section1 location={location} />
+        <Section1
+          location={location}
+          handleLocationSelect={this.handleLocationSelect}
+          ctx={this}
+        />
         <Section2 ctx={this} meetCheck={meetCheck} />
         {/* STEPS SECTION */}
 

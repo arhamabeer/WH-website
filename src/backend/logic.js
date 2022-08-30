@@ -74,7 +74,7 @@ export const BookMeeting = (slot, ctx) => {
     company,
     phone_number,
   } = slot;
-  let arr = [];
+  let prevMeetings = [];
   let check = true;
   //   console.log(Stime, Etime);
 
@@ -106,48 +106,48 @@ export const BookMeeting = (slot, ctx) => {
         db.ref(`allMeetings`).once("value", (snapShot) => {
           //   if (snapShot.exists()) {
           snapShot.forEach((e) => {
-            arr.push(e.val());
+            prevMeetings.push(e.val());
           });
-          if (arr.length > 0) {
-            for (let i = 0; i < arr.length; i++) {
-              let startTime = arr[i].Stime;
-              let endTime = arr[i].Etime;
+          if (prevMeetings.length > 0) {
+            for (let i = 0; i < prevMeetings.length; i++) {
+              let startTime = prevMeetings[i].Stime;
+              let endTime = prevMeetings[i].Etime;
               let dbStime = new Date(
                 date + " " + parseTime(startTime)
               ).getTime();
               let dbEtime = new Date(date + " " + parseTime(endTime)).getTime();
               if (
-                selectedLocation == arr[i].selectedLocation
+                selectedLocation == prevMeetings[i].selectedLocation
                 // &&
-                //   date == arr[i].date &&
-                //   room == arr[i].room &&
+                //   date == prevMeetings[i].date &&
+                //   room == prevMeetings[i].room &&
                 //   newStime >= dbStime &&
                 //   newEtime <= dbEtime) ||
                 // (newEtime <= dbEtime && newEtime >= dbStime)
               ) {
                 if (
-                  (date == arr[i].date &&
-                    room == arr[i].room &&
+                  (date == prevMeetings[i].date &&
+                    room == prevMeetings[i].room &&
                     newStime > dbStime &&
                     newStime < dbEtime) ||
-                  (date == arr[i].date &&
-                    room == arr[i].room &&
+                  (date == prevMeetings[i].date &&
+                    room == prevMeetings[i].room &&
                     newEtime < dbEtime &&
                     newEtime > dbStime) ||
-                  (date == arr[i].date &&
-                    room == arr[i].room &&
+                  (date == prevMeetings[i].date &&
+                    room == prevMeetings[i].room &&
                     newEtime == dbEtime &&
                     newStime == dbStime) ||
-                  (date == arr[i].date &&
-                    room == arr[i].room &&
+                  (date == prevMeetings[i].date &&
+                    room == prevMeetings[i].room &&
                     newEtime == dbEtime &&
                     newStime < dbStime) ||
-                  (date == arr[i].date &&
-                    room == arr[i].room &&
+                  (date == prevMeetings[i].date &&
+                    room == prevMeetings[i].room &&
                     newEtime > dbEtime &&
                     newStime == dbStime)
                 ) {
-                  // console.log("arr err => ", arr[i].fullname);
+                  // console.log("prevMeetings err => ", prevMeetings[i].fullname);
                   alert(
                     "Meeting has already been booked between this slot. Please Change your slot"
                   );
@@ -165,14 +165,15 @@ export const BookMeeting = (slot, ctx) => {
           // } else {
 
           if (check) {
-            db.ref(`allMeetings`)
-              .push(slot)
-              .then((success) => {
-                // appendSpreadsheetMeetings(slot);
-                alert("Your meeting has been booked");
-                resolve(success);
-              })
-              .catch((e) => alert("Some Thing Went Wrong", e));
+            // db.ref(`allMeetings`)
+            //   .push(slot)
+            //   .then((success) => {
+            //     // appendSpreadsheetMeetings(slot);
+            //     alert("Your meeting has been booked");
+            //     resolve(success);
+            //   })
+            //   .catch((e) => alert("Some Thing Went Wrong", e));
+            console.log("boooked......!!!", slot, prevMeetings);
           }
         });
       }
@@ -183,18 +184,18 @@ export const BookMeeting = (slot, ctx) => {
 };
 
 export const GetAllMeetings = async (ctx) => {
-  let arr = [];
+  let prevMeetings = [];
   await db
     .ref("allMeetings")
     .orderByKey()
     .on("value", (snapShot) => {
       if (snapShot.exists()) {
         snapShot.forEach((e) => {
-          arr.push(e.val());
+          prevMeetings.push(e.val());
         });
       }
     });
   ctx.setState({
-    fetchedMeetings: arr,
+    fetchedMeetings: prevMeetings,
   });
 };

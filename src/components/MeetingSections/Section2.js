@@ -10,8 +10,161 @@ import {
 } from "../../screens/MeetingPage/validation";
 
 export default function Section2({ ctx, meetCheck }) {
-  const [plan, setPlan] = useState("");
+  const [mapPins, setMapPins] = useState([
+    "https://www.google.com/maps/place/Work+Hall/@24.8509422,67.0317135,21z/data=!4m5!3m4!1s0x3eb33f03fc15d72f:0xe4242b9cc169561c!8m2!3d24.8509849!4d67.0315533",
+    "https://www.google.com/maps/place/Work+Hall/@24.8509422,67.0317135,21z/data=!4m5!3m4!1s0x3eb33f03fc15d72f:0xe4242b9cc169561c!8m2!3d24.8509849!4d67.0315533",
+    "https://www.google.com/maps/place/Work+Hall/@24.8509422,67.0317135,21z/data=!4m5!3m4!1s0x3eb33f03fc15d72f:0xe4242b9cc169561c!8m2!3d24.8509849!4d67.0315533",
+    "https://www.google.com/maps/place/Work+Hall/@24.8509422,67.0317135,21z/data=!4m5!3m4!1s0x3eb33f03fc15d72f:0xe4242b9cc169561c!8m2!3d24.8509849!4d67.0315533",
+  ]);
+  const [selectedPlan, setSelectedPlan] = useState("");
 
+  const metroPlanImages = [
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "4-6 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/8.png"),
+      capacity: "13-25 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "4-6 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "3 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+  ];
+  const tipuPlanImages = [
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "4-6 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/8.png"),
+      capacity: "13-25 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "4-6 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "3 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+  ];
+  const ittehadPlanImages = [
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "4-6 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/8.png"),
+      capacity: "13-25 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "4-6 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "3 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+  ];
+  const gulshanPlanImages = [
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "4-6 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/8.png"),
+      capacity: "13-25 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "4-6 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "3 persons",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+    {
+      img: require("../../screens/MeetingPage/assets/images/plans/1.png"),
+      capacity: "1 person",
+    },
+  ];
+
+  const handleSelectChange = (r, e) => {
+    if (e === "Air") {
+      setSelectedPlan(0);
+    } else if (e === "Conference room") {
+      setSelectedPlan(1);
+    } else if (e === "Exclusive event space") {
+      setSelectedPlan(2);
+    } else if (e === "Meeting room") {
+      setSelectedPlan(3);
+    } else if (e === "Private office suite") {
+      setSelectedPlan(4);
+    } else if (e === "Virtual office address") {
+      setSelectedPlan(5);
+    } else if (e === "X") {
+      setSelectedPlan(6);
+    }
+    ctx.handleInputRoomChange(r, e);
+  };
+
+  // console.log(selectedPlan, metroPlanImages);
+  console.log(
+    metroPlanImages[selectedPlan] !== undefined &&
+      metroPlanImages[selectedPlan].img
+  );
+
+  // console.log(selectedPlan);
   return (
     <section
       style={!ctx.state.blur2 ? { display: "block" } : { display: "none" }}
@@ -28,29 +181,63 @@ export default function Section2({ ctx, meetCheck }) {
               <img
                 width="400px"
                 height="300px"
-                src={require("../../screens/MeetingPage/assets/images/mr1.png")}
+                // src={require("../../screens/MeetingPage/assets/images/mr1.png")}
+                src={ctx.state.location
+                  .filter((x) => x.name === ctx.state.selectedLocation)
+                  .map((x) => x.img)}
                 style={{
                   borderRadius: 20,
-                  boxShadow: "7px 7px 10px grey",
+                  boxShadow: "1px 1px 10px #c1242b",
                 }}
               />
-              <h3>Metropole</h3>
-              <a href="/">Get Direction</a>
+              <h3>{ctx.state.selectedLocation}</h3>
+              <a
+                href={
+                  ctx.state.selectedLocation === "Ittehad"
+                    ? mapPins[2]
+                    : ctx.state.selectedLocation === "Gulshan"
+                    ? mapPins[3]
+                    : ctx.state.selectedLocation === "Tipu Sultan"
+                    ? mapPins[1]
+                    : mapPins[0]
+                }
+              >
+                Get Direction
+              </a>
             </div>
             <div className="meet-r-i">
               <img
                 width="400px"
                 height="300px"
-                src={require("../../screens/MeetingPage/assets/images/mr1.png")}
+                // src={require("../../screens/MeetingPage/assets/images/mr1.png")}
+                src={
+                  ctx.state.selectedLocation === "Metropole"
+                    ? metroPlanImages[selectedPlan] !== undefined &&
+                      metroPlanImages[selectedPlan].img
+                    : ctx.state.selectedLocation === "Ittehad"
+                    ? ittehadPlanImages[selectedPlan] !== undefined &&
+                      ittehadPlanImages[selectedPlan].img
+                    : ctx.state.selectedLocation === "Gulshan"
+                    ? gulshanPlanImages[selectedPlan] !== undefined &&
+                      gulshanPlanImages[selectedPlan].img
+                    : ctx.state.selectedLocation === "Tipu Sultan"
+                    ? tipuPlanImages[selectedPlan] !== undefined &&
+                      tipuPlanImages[selectedPlan].img
+                    : require("../../screens/MeetingPage/assets/images/gray.jpg")
+                }
                 style={{
                   borderRadius: 20,
-                  boxShadow: "7px 7px 10px grey",
+                  boxShadow: "1px 1px 10px grey",
                 }}
               />
-              <h3>Plan name</h3>
+              <h3>{ctx.state.room}</h3>
               <h6>
                 Capacity:{" "}
-                <span style={{ fontWeight: "bold" }}> 4-5 persons</span>
+                <span style={{ fontWeight: "bold" }}>
+                  {" "}
+                  {metroPlanImages[selectedPlan] !== undefined &&
+                    metroPlanImages[selectedPlan].capacity}
+                </span>
               </h6>
             </div>
           </div>
@@ -58,27 +245,29 @@ export default function Section2({ ctx, meetCheck }) {
         <div className="sec2-room">
           <div className="sec2-room-info">
             <div>
-              <label className="book-label">Select Room</label>
+              <label className="book-label">Select Plan / Room</label>
               <select
                 onChange={(e) => {
-                  ctx.handleInputRoomChange("room", e.target.value);
+                  handleSelectChange("room", e.target.value);
                 }}
                 className="basic-info-sel"
               >
                 <option selected value="Select Plan / Room" disabled>
                   Select Plan / Room
                 </option>
+                <option value="Air">Air</option>
                 <option value="Conference room">Conference room</option>
+                <option value="Exclusive event space">
+                  Exclusive event space
+                </option>
                 <option value="Meeting room">Meeting room</option>
                 <option value="Private office suite">
                   Private office suite
                 </option>
-                <option value="Exclusive event space">
-                  Exclusive event space
-                </option>
                 <option value="Virtual office address">
                   Virtual office address
                 </option>
+                <option value="X">X</option>
               </select>
             </div>
             <div>
