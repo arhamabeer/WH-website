@@ -779,6 +779,15 @@ ul {
   }
 }
 @media (min-width: 768px) and (max-width: 1420px) {
+  .div-input-icon-date-sch {
+    width: 100%;
+  }
+  .slots-time-picker {
+    font-size: 13px;
+    width: 120px;
+    padding: 0;
+    margin: 5px;
+  }
   .mr-img {
     width: 40%;
     margin-bottom: 25px;
@@ -822,7 +831,7 @@ ul {
     width: 150px;
   }
   .sec2-room {
-    width: 40%;
+    width: 45%;
   }
   .meet-r {
     width: 100%;
@@ -832,6 +841,12 @@ ul {
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  .slots-time-picker {
+    width: 115px !important;
+    font-size: 12px;
+    padding: 0;
+    margin: 5px;
+  }
   .booking1-section {
     flex-direction: column;
   }

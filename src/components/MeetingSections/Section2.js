@@ -190,40 +190,40 @@ export default function Section2({ ctx, meetCheck }) {
     ctx.handleInputRoomChange(r, e);
   };
   const timeslots = [
-    { Stime: "7:00 am-7:30 am", id: 0 },
-    { Stime: "7:30 am-8:00 am", id: 1 },
-    { Stime: "8:00 am-8:30 am", id: 2 },
-    { Stime: "8:30 am-9:00 am", id: 3 },
-    { Stime: "9:00 am-9:30 am", id: 4 },
-    { Stime: "9:30 am-10:00 am", id: 5 },
-    { Stime: "10:00 am-10:30 am", id: 6 },
-    { Stime: "10:30 am-11:00 am", id: 7 },
-    { Stime: "11:00 am-11:30 am", id: 8 },
-    { Stime: "11:30 am-12:00 pm", id: 9 },
-    { Stime: "12:00 pm-12:30 pm", id: 10 },
-    { Stime: "12:30 pm-1:00 pm", id: 11 },
-    { Stime: "1:00 pm-1:30 pm", id: 12 },
-    { Stime: "1:30 pm-2:00 pm", id: 13 },
-    { Stime: "2:00 pm-2:30 pm", id: 14 },
-    { Stime: "2:30 pm-3:00 pm", id: 15 },
-    { Stime: "3:00 pm-3:30 pm", id: 16 },
-    { Stime: "3:30 pm-4:00 pm", id: 17 },
-    { Stime: "4:00 pm-4:30 pm", id: 17 },
-    { Stime: "4:30 pm-5:00 pm", id: 19 },
-    { Stime: "5:00 pm-5:30 pm", id: 20 },
-    { Stime: "5:30 pm-6:00 pm", id: 21 },
-    { Stime: "6:00 pm-6:30 pm", id: 22 },
-    { Stime: "6:30 pm-7:00 pm", id: 23 },
-    { Stime: "7:00 pm-7:30 pm", id: 24 },
-    { Stime: "7:30 pm-8:00 pm", id: 25 },
-    { Stime: "8:00 pm-8:30 pm", id: 26 },
-    { Stime: "8:30 pm-9:00 pm", id: 27 },
-    { Stime: "9:00 pm-9:30 pm", id: 28 },
-    { Stime: "9:30 pm-10:00 pm", id: 29 },
-    { Stime: "10:00 pm-10:30 pm", id: 30 },
-    { Stime: "10:30 pm-11:00 pm", id: 31 },
-    { Stime: "11:00 pm-11:30 pm", id: 32 },
-    { Stime: "11:30 pm-12:00 am", id: 33 },
+    { Stime: "7:00am-7:30am", id: 0 },
+    { Stime: "7:30am-8:00am", id: 1 },
+    { Stime: "8:00am-8:30am", id: 2 },
+    { Stime: "8:30am-9:00am", id: 3 },
+    { Stime: "9:00am-9:30am", id: 4 },
+    { Stime: "9:30am-10:00am", id: 5 },
+    { Stime: "10:00am-10:30am", id: 6 },
+    { Stime: "10:30am-11:00am", id: 7 },
+    { Stime: "11:00am-11:30am", id: 8 },
+    { Stime: "11:30am-12:00pm", id: 9 },
+    { Stime: "12:00pm-12:30pm", id: 10 },
+    { Stime: "12:30pm-1:00pm", id: 11 },
+    { Stime: "1:00pm-1:30pm", id: 12 },
+    { Stime: "1:30pm-2:00pm", id: 13 },
+    { Stime: "2:00pm-2:30pm", id: 14 },
+    { Stime: "2:30pm-3:00pm", id: 15 },
+    { Stime: "3:00pm-3:30pm", id: 16 },
+    { Stime: "3:30pm-4:00pm", id: 17 },
+    { Stime: "4:00pm-4:30pm", id: 17 },
+    { Stime: "4:30pm-5:00pm", id: 19 },
+    { Stime: "5:00pm-5:30pm", id: 20 },
+    { Stime: "5:30pm-6:00pm", id: 21 },
+    { Stime: "6:00pm-6:30pm", id: 22 },
+    { Stime: "6:30pm-7:00pm", id: 23 },
+    { Stime: "7:00pm-7:30pm", id: 24 },
+    { Stime: "7:30pm-8:00pm", id: 25 },
+    { Stime: "8:00pm-8:30pm", id: 26 },
+    { Stime: "8:30pm-9:00pm", id: 27 },
+    { Stime: "9:00pm-9:30pm", id: 28 },
+    { Stime: "9:30pm-10:00pm", id: 29 },
+    { Stime: "10:00pm-10:30pm", id: 30 },
+    { Stime: "10:30pm-11:00pm", id: 31 },
+    { Stime: "11:00pm-11:30pm", id: 32 },
+    { Stime: "11:30pm-12:00am", id: 33 },
   ];
 
   const handleChange = (v) => {
@@ -244,7 +244,7 @@ export default function Section2({ ctx, meetCheck }) {
       <a href="sec2" id="sec2"></a>
       <div className="booking-sec-main-div">
         <div style={{ width: "60%" }} className="booking-sec-main-div-1st-div">
-          <h1 style={{ textAlign: "center" }}>location</h1>
+          {/* <h1 style={{ textAlign: "center" }}>location</h1> */}
           <div className="meet-r">
             <div className="meet-r-i">
               <img
@@ -456,7 +456,7 @@ export default function Section2({ ctx, meetCheck }) {
                 className="time-picker"
               ></TimePickerComponent>
             </div> */}
-            <label className="book-label">Number</label>
+            <label className="book-label">Time</label>
             <div className="div-input-icon-date-sch" style={{}}>
               {timeslots.map((v) => {
                 return (
@@ -465,7 +465,7 @@ export default function Section2({ ctx, meetCheck }) {
                     onClick={() => handleChange(v)}
                     style={
                       v.id === id
-                        ? { backgroundColor: "#3E469D", color: "#fff" }
+                        ? { backgroundColor: "#c1242b", color: "#fff" }
                         : { background: "#fff" }
                     }
                   >
