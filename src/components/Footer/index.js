@@ -107,7 +107,7 @@ let Footer = (props) => {
             <div className="divider">
               <div></div>
             </div>
-            <a
+            {/* <a
               href={activeScreen != "Academy" ? "/academy" : ""}
               className={activeScreen == "Academy" ? "active" : "font-gray"}
             >
@@ -115,7 +115,7 @@ let Footer = (props) => {
             </a>
             <div className="divider">
               <div></div>
-            </div>
+            </div> */}
             <a
               href={activeScreen != "Merch" ? "/merch" : ""}
               className={activeScreen == "Merch" ? "m-active" : "font-gray"}

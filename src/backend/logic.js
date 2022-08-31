@@ -173,6 +173,7 @@ export const BookMeeting = (slot, ctx) => {
             //     resolve(success);
             //   })
             //   .catch((e) => alert("Some Thing Went Wrong", e));
+            ctx.setState({ blur3: true, blur2: false });
             console.log("boooked......!!!", slot, prevMeetings);
           }
         });

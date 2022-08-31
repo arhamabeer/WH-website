@@ -87,37 +87,12 @@ export default class MeetingPage extends Component {
           area: "Rashid minhas road",
           img: require("./assets/images/Gulshan.png"),
         },
-        // {
-        //   name: "Ittehad",
-        //   area: "DHA",
-        //   img: require("./assets/images/lobby.png"),
-        // },
+        {
+          name: "Zamzama",
+          area: "DHA",
+          img: require("./assets/images/plans/zz4.png"),
+        },
       ],
-      MetropoleImg: [
-        { img: require("./assets/images/lobby.png") },
-        { img: require("./assets/images/office.jpeg") },
-        { img: require("./assets/images/last.png") },
-        { img: require("./assets/images/boxOut.png") },
-      ],
-      TipuSultanImg: [
-        { img: require("./assets/images/oaw.png") },
-        { img: require("./assets/images/aridesk.png") },
-        { img: require("./assets/images/office.jpg") },
-        { img: require("./assets/images/last.png") },
-      ],
-      GulshanImg: [
-        { img: require("./assets/images/last.png") },
-        { img: require("./assets/images/coffeeTable.png") },
-        { img: require("./assets/images/meet1.png") },
-        { img: require("./assets/images/office.jpg") },
-      ],
-      IttehadImg: [
-        { img: require("./assets/images/it-1.jpg") },
-        { img: require("./assets/images/it-2.jpg") },
-        { img: require("./assets/images/it-3.jpg") },
-        { img: require("./assets/images/it-4.jpg") },
-      ],
-
       selectLocationArea: "",
       selectedLocation: "",
       selectedLocationTab: "Metropole",
@@ -164,7 +139,7 @@ export default class MeetingPage extends Component {
   };
 
   handleLocationSelect = (data) => {
-    this.setState({ selectedLocation: data.name });
+    this.setState({ selectedLocation: data.name, blur1: false, blur2: true });
   };
 
   componentDidMount() {
@@ -382,24 +357,15 @@ export default class MeetingPage extends Component {
       Etime === "" ||
       !errorMessage.nameValid ||
       !errorMessage.cityValid ||
-      !errorMessage.phoneValid
+      !errorMessage.phoneValid ||
+      selectedLocation === "" ||
+      room === ""
     ) {
       // console.log();
       alert("All fields are required");
     } else if (!regExp.test(Stime) || !regExp.test(Etime)) {
       alert("Wrong time format");
     } else {
-      // let sth = this.state.Stime.split(":");
-      // let sth1 = sth.length > 1 ? sth[1].split(" ") : "";
-      // let startMili = +sth[0] * (60000 * 60) + +sth1[0] * 60000;
-      // let eth = this.state.Etime.split(":");
-      // let eth1 = eth.length > 1 ? eth[1].split(" ") : "";
-      // let endMili = +eth[0] * (60000 * 60) + +eth1[0] * 60000;
-      // if (endMili - startMili > 7200000) {
-      //   alert("You can book for max 2 hours");
-      // } else if (endMili - startMili <= 0) {
-      // }
-      // this.setState({ blur3: false });
       BookMeeting(slot, this);
     }
     // console.log(Stime, Etime);
@@ -613,7 +579,7 @@ export default class MeetingPage extends Component {
               <div style={{ marginTop: -100 }}>
                 <div className="locations-and-plans-title-area module">
                   <p>
-                    <h1>Book</h1> <h1 className="color-primary"> a Meeting</h1>
+                    <h1>book</h1> <h1 className="color-primary"> a seat</h1>
                   </p>
                 </div>
               </div>
@@ -663,7 +629,7 @@ export default class MeetingPage extends Component {
           <div className="step-gap-area"></div>
         </section>
         <div
-          style={!this.state.blur3 ? { display: "block" } : { display: "none" }}
+          style={this.state.blur3 ? { display: "block" } : { display: "none" }}
         >
           <h1
             style={{
@@ -673,7 +639,7 @@ export default class MeetingPage extends Component {
               fontSize: 50,
             }}
           >
-            Pay with card
+            pay with card
           </h1>
           <section className="sec3-meeting">
             <div className="card-main-div">

@@ -27,6 +27,7 @@ html {
   }
 
   .hero-right-planspage h1 {
+    font-family: regular;
     font-size: 50px !important;
   }
 }
@@ -40,6 +41,7 @@ html {
   padding: 0 !important;
 }
 .locations-and-plans-title-area h1 {
+  font-family: regular;
   font-size: 108px;
   font-weight: bold;
 }
@@ -197,6 +199,7 @@ html {
   justify-content: space-evenly;
 }
 .faq-wrapper h1 {
+  font-family: regular;
   text-align: center;
   font-size: 108px;
   font-weight: bold;
@@ -262,6 +265,7 @@ html {
 }
 
 .amenities-title h1 {
+  font-family: regular;
   font-size: 108px !important;
   font-weight: bold;
 }
@@ -282,12 +286,13 @@ html {
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
+  transition-delay: 1s;
 }
 .location-img-div {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  height: 700px;
+  height: 1100px;
   justify-content: space-evenly;
   flex-direction: row;
 }
@@ -353,7 +358,7 @@ html {
   background-color: #c1242b;
 }
 .basic-info-btn {
-  width: 40%;
+  width: 190px;
   height: 45px;
   border-radius: 11px;
   background-color: #000;
@@ -366,7 +371,7 @@ html {
 .booking-sec-main-div {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  /* align-items: center; */
 }
 .book-label {
   display: flex;
@@ -408,6 +413,7 @@ html {
   transition: 1s;
 }
 .mr-img1:hover .mr-img_h3 {
+  font-family: regular;
   width: 520px;
   height: 320px;
 }
@@ -416,6 +422,7 @@ html {
   height: 320px;
 }
 .mr-img_h3 {
+  font-family: regular;
   display: flex;
   position: absolute;
   margin: 0;
@@ -432,6 +439,7 @@ html {
 
 .booking-section2 {
   margin-bottom: 100px;
+  transition-delay: 1s;
 }
 .time-picker,
 .e-control-wrapper {
@@ -479,7 +487,9 @@ html {
   height: 400px;
   margin-top: 25px;
 }
-.ul-bookings h3 {
+.ul-bookingsh3 {
+  font-family: regular;
+  font-family: regular;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -567,6 +577,7 @@ ul {
 }
 .meet-r-i a,
 .meet-r-i h3 {
+  font-family: regular;
   width: 100%;
   text-align: center;
   display: flex;
@@ -574,6 +585,7 @@ ul {
   margin-top: 5px;
 }
 .meet-r-i h6 {
+  font-family: regular;
   width: 100%;
   text-align: center;
   display: flex;
@@ -598,6 +610,46 @@ ul {
 .mr-img_h3:active {
   border: 5px solid #bf640a;
 }
+.sec2-room-info div {
+  height: 85px;
+}
+
+.e-input-group input.e-input,
+.e-input-group.e-control-wrapper input.e-input,
+.e-input-group textarea.e-input,
+.e-input-group.e-control-wrapper textarea.e-input {
+  margin-bottom: 0px !important;
+}
+
+.slots-time-picker {
+  width: 150px;
+  height: 45px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  margin: 15px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+.slots-time-picker:hover {
+  background-color: #3e469d;
+}
+.div-input-icon-date-sch {
+  display: flex;
+  width: 98%;
+  align-self: center;
+  background: #dbdbdb !important;
+  border-radius: 16px;
+  height: 250px !important;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0px;
+}
+
 @media only screen and (max-width: 600px) {
   .faq-main-div {
     width: 100%;
@@ -619,6 +671,7 @@ ul {
 @media only screen and (max-width: 426px) {
   /* LOCATION AND PLANS */
   .locations-and-plans-title-area h1 {
+    font-family: regular;
     font-size: 70px !important;
   }
   .faq-main-div {
@@ -656,6 +709,7 @@ ul {
 
   /* AMINITIES */
   .amenities-title h1 {
+    font-family: regular;
     font-size: 70px !important ;
   }
   .faq-main-div {
@@ -675,6 +729,7 @@ ul {
 @media only screen and (max-width: 375px) {
   /* LOCATION AND PLANS */
   .locations-and-plans-title-area h1 {
+    font-family: regular;
     font-size: 60px !important;
   }
   .faq-main-div {
@@ -693,17 +748,20 @@ ul {
 
   /* AMENITIES */
   .amenities-title h1 {
+    font-family: regular;
     font-size: 60px !important ;
   }
 }
 @media only screen and (max-width: 320px) {
   /* LOCATION AND PLANS */
   .locations-and-plans-title-area h1 {
+    font-family: regular;
     font-size: 50px !important;
   }
 
   /* AMENITIES */
   .amenities-title h1 {
+    font-family: regular;
     font-size: 50px !important ;
   }
   .faq-main-div {
@@ -724,11 +782,30 @@ ul {
   .mr-img {
     width: 40%;
     margin-bottom: 25px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
-  .mr-img img {
-    width: 300px;
+  .mr-img_h3,
+  .mr-img_img {
+    width: 350px;
     height: 250px;
+  }
+  .mr-img1:hover .mr-img_h3,
+  .mr-img1:hover .mr-img_img {
+    width: 420px;
+    height: 280px;
+  }
+  .selected_loc_h {
+    width: 430px;
+    height: 300px;
+  }
+  .selected_loc {
+    border: 3px solid #f5891d;
+    width: 430px;
+    height: 300px;
+  }
+  .meet-r-i img {
+    width: 300px;
+    height: 210px;
   }
   .location-img-div {
     align-content: center;
@@ -745,10 +822,10 @@ ul {
     width: 150px;
   }
   .sec2-room {
-    width: 90%;
+    width: 40%;
   }
   .meet-r {
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
   }
@@ -769,9 +846,42 @@ ul {
     width: 90%;
     margin-bottom: 15px;
   }
-  .mr-img img {
-    width: 100%;
+  .mr-img1 {
+    display: flex;
+    justify-content: center;
+  }
+  .mr-img_h3 {
+    font-family: regular;
+    width: 270px;
     height: 250px;
+  }
+  .mr-img_img {
+    width: 270px;
+    height: 250px;
+  }
+  .mr-img1:hover .mr-img_img {
+    width: 280px;
+    height: 260px;
+  }
+  .mr-img1:hover .mr-img_h3 {
+    font-family: regular;
+    width: 280px;
+    height: 260px;
+  }
+  .selected_loc_h {
+    width: 290px;
+    height: 270px;
+  }
+  .selected_loc {
+    border: 3px solid #f5891d;
+    width: 290px;
+    height: 270px;
+  }
+  .booking-sec-main-div {
+    flex-direction: column;
+  }
+  .booking-sec-main-div-1st-div {
+    width: 100% !important;
   }
   .location-div {
     display: none !important;
@@ -792,11 +902,24 @@ ul {
   .meet-r {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
   }
   .meet-r img {
-    width: 47%;
-    height: 180px;
+    width: 320px;
+    height: 210px;
+  }
+  .basic-info-sel,
+  .basic-info-inputs {
+    padding: 5px 15px;
+  }
+
+  .sec2-room-info div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 85px;
   }
   .sec2-room,
   .sec3-meeting {

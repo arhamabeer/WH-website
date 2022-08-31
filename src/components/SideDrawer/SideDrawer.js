@@ -42,6 +42,23 @@ const sideDrawer = (props) => {
               Plans
             </a>
           </li>
+          <div className="divider">
+            <div></div>
+          </div>
+          <div className="divider1">
+            <div></div>
+          </div>
+          <li>
+            <a
+              href={activeScreen != "Meetings" ? "/meetings" : ""}
+              className={activeScreen == "Meetings" ? "active" : "font-gray"}
+            >
+              Meetings
+            </a>
+            <div className="divider">
+              <div></div>
+            </div>
+          </li>
           <div className="divider1">
             <div></div>
           </div>
@@ -56,7 +73,7 @@ const sideDrawer = (props) => {
           <div className="divider1">
             <div></div>
           </div>
-          <li>
+          {/* <li>
             <a
               href={activeScreen != "Academy" ? "/academy" : ""}
               className={activeScreen == "Academy" ? "active" : "font-gray"}
@@ -66,7 +83,7 @@ const sideDrawer = (props) => {
           </li>
           <div className="divider1">
             <div></div>
-          </div>
+          </div> */}
           <li>
             <a
               href={activeScreen != "Merch" ? "/merch" : ""}
